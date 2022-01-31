@@ -45,8 +45,7 @@ namespace CreateSelfSignedCertificate
         {
             using (var dialog = new SaveFileDialog())
             {
-                dialog.Filter = "pfx files (*.pfx)|*.pfx";
-                dialog.FilterIndex = 2;
+                dialog.Filter = "pfx files (*.pfx)|*.pfx";                
                 dialog.RestoreDirectory = true;
 
                 if (dialog.ShowDialog() != DialogResult.OK)
