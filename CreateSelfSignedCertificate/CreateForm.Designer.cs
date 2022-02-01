@@ -35,7 +35,11 @@
             this.numYear = new System.Windows.Forms.NumericUpDown();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioDigitalSignature = new System.Windows.Forms.RadioButton();
+            this.radioKeyEncipherment = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +69,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(296, 115);
+            this.btnCreate.Location = new System.Drawing.Point(296, 214);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 3;
@@ -95,11 +99,45 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Password:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioDigitalSignature);
+            this.groupBox1.Controls.Add(this.radioKeyEncipherment);
+            this.groupBox1.Location = new System.Drawing.Point(121, 116);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(250, 82);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Usage:";
+            // 
+            // radioDigitalSignature
+            // 
+            this.radioDigitalSignature.AutoSize = true;
+            this.radioDigitalSignature.Location = new System.Drawing.Point(54, 47);
+            this.radioDigitalSignature.Name = "radioDigitalSignature";
+            this.radioDigitalSignature.Size = new System.Drawing.Size(112, 19);
+            this.radioDigitalSignature.TabIndex = 1;
+            this.radioDigitalSignature.TabStop = true;
+            this.radioDigitalSignature.Text = "Digital Signature";
+            this.radioDigitalSignature.UseVisualStyleBackColor = true;
+            // 
+            // radioKeyEncipherment
+            // 
+            this.radioKeyEncipherment.AutoSize = true;
+            this.radioKeyEncipherment.Location = new System.Drawing.Point(54, 22);
+            this.radioKeyEncipherment.Name = "radioKeyEncipherment";
+            this.radioKeyEncipherment.Size = new System.Drawing.Size(121, 19);
+            this.radioKeyEncipherment.TabIndex = 0;
+            this.radioKeyEncipherment.TabStop = true;
+            this.radioKeyEncipherment.Text = "Key Encipherment";
+            this.radioKeyEncipherment.UseVisualStyleBackColor = true;
+            // 
             // CreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 173);
+            this.ClientSize = new System.Drawing.Size(410, 253);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numYear);
@@ -108,15 +146,17 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(426, 212);
+            this.MaximumSize = new System.Drawing.Size(426, 292);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(426, 212);
+            this.MinimumSize = new System.Drawing.Size(426, 292);
             this.Name = "CreateForm";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Self Signed Certificate";
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +171,8 @@
         private NumericUpDown numYear;
         private TextBox txtPassword;
         private Label label3;
+        private GroupBox groupBox1;
+        private RadioButton radioDigitalSignature;
+        private RadioButton radioKeyEncipherment;
     }
 }

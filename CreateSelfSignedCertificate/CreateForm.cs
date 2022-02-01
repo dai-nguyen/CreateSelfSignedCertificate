@@ -15,6 +15,7 @@ namespace CreateSelfSignedCertificate
             numYear.LostFocus += NumYear_LostFocus;
             txtPassword.LostFocus += TxtPassword_LostFocus;
             numYear.Value = 2;
+            radioKeyEncipherment.Checked = true;
         }
 
         private void TxtPassword_LostFocus(object? sender, EventArgs e)
@@ -65,9 +66,18 @@ namespace CreateSelfSignedCertificate
                         HashAlgorithmName.SHA256,
                         RSASignaturePadding.Pkcs1);
 
-                    request
-                        .CertificateExtensions
-                        .Add(new X509KeyUsageExtension(X509KeyUsageFlags.KeyEncipherment, critical: true));
+                    if (radioKeyEncipherment.Checked)
+                    {
+                        request
+                            .CertificateExtensions
+                            .Add(new X509KeyUsageExtension(X509KeyUsageFlags.KeyEncipherment, critical: true));
+                    }
+                    else if (radioDigitalSignature.Checked)
+                    {
+                        request
+                            .CertificateExtensions
+                            .Add(new X509KeyUsageExtension(X509KeyUsageFlags.DigitalSignature, critical: true));
+                    }
 
                     var certificate = request.CreateSelfSigned(DateTimeOffset.UtcNow, DateTimeOffset.UtcNow.AddYears(year));
 
