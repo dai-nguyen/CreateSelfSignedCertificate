@@ -16,6 +16,14 @@ namespace CreateSelfSignedCertificate
             txtPassword.LostFocus += TxtPassword_LostFocus;
             numYear.Value = 2;
             radioKeyEncipherment.Checked = true;
+
+            txtCert.ReadOnly = true;
+            btnCopy.Click += BtnCopy_Click;
+        }
+
+        private void BtnCopy_Click(object? sender, EventArgs e)
+        {
+            Clipboard.SetText(txtCert.Text);
         }
 
         private void TxtPassword_LostFocus(object? sender, EventArgs e)
@@ -82,6 +90,8 @@ namespace CreateSelfSignedCertificate
                     var certificate = request.CreateSelfSigned(DateTimeOffset.UtcNow, DateTimeOffset.UtcNow.AddYears(year));
 
                     var data = certificate.Export(X509ContentType.Pfx, password);
+
+                    txtCert.Text = Convert.ToBase64String(data);
 
                     File.WriteAllBytes(dialog.FileName, data);
                 }

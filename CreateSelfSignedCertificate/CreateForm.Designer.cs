@@ -38,6 +38,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioDigitalSignature = new System.Windows.Forms.RadioButton();
             this.radioKeyEncipherment = new System.Windows.Forms.RadioButton();
+            this.txtCert = new System.Windows.Forms.TextBox();
+            this.btnCopy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +71,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(296, 214);
+            this.btnCreate.Location = new System.Drawing.Point(296, 204);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 3;
@@ -132,11 +134,30 @@
             this.radioKeyEncipherment.Text = "Key Encipherment";
             this.radioKeyEncipherment.UseVisualStyleBackColor = true;
             // 
+            // txtCert
+            // 
+            this.txtCert.Location = new System.Drawing.Point(30, 233);
+            this.txtCert.Multiline = true;
+            this.txtCert.Name = "txtCert";
+            this.txtCert.Size = new System.Drawing.Size(341, 150);
+            this.txtCert.TabIndex = 8;
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Location = new System.Drawing.Point(296, 389);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(75, 23);
+            this.btnCopy.TabIndex = 9;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            // 
             // CreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 253);
+            this.ClientSize = new System.Drawing.Size(410, 425);
+            this.Controls.Add(this.btnCopy);
+            this.Controls.Add(this.txtCert);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
@@ -146,7 +167,6 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(426, 292);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(426, 292);
             this.Name = "CreateForm";
@@ -174,5 +194,7 @@
         private GroupBox groupBox1;
         private RadioButton radioDigitalSignature;
         private RadioButton radioKeyEncipherment;
+        private TextBox txtCert;
+        private Button btnCopy;
     }
 }
