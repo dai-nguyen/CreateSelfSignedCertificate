@@ -40,6 +40,7 @@
             this.radioKeyEncipherment = new System.Windows.Forms.RadioButton();
             this.txtCert = new System.Windows.Forms.TextBox();
             this.btnCopy = new System.Windows.Forms.Button();
+            this.btnCreateText = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,11 +72,11 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(296, 204);
+            this.btnCreate.Location = new System.Drawing.Point(121, 204);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 3;
-            this.btnCreate.Text = "Create";
+            this.btnCreate.Text = "Create File";
             this.btnCreate.UseVisualStyleBackColor = true;
             // 
             // numYear
@@ -151,11 +152,21 @@
             this.btnCopy.Text = "Copy";
             this.btnCopy.UseVisualStyleBackColor = true;
             // 
+            // btnCreateText
+            // 
+            this.btnCreateText.Location = new System.Drawing.Point(296, 204);
+            this.btnCreateText.Name = "btnCreateText";
+            this.btnCreateText.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateText.TabIndex = 10;
+            this.btnCreateText.Text = "Create Text";
+            this.btnCreateText.UseVisualStyleBackColor = true;
+            // 
             // CreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 425);
+            this.Controls.Add(this.btnCreateText);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.txtCert);
             this.Controls.Add(this.groupBox1);
@@ -196,5 +207,6 @@
         private RadioButton radioKeyEncipherment;
         private TextBox txtCert;
         private Button btnCopy;
+        private Button btnCreateText;
     }
 }
